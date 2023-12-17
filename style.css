@@ -39,10 +39,20 @@ body {
 .btn {
     width: 25%;
     height: 30%;
+    font-size: 25px;
+}
+
+.btn:nth-child(1) {
+    background-color: #ffd1de;
+}
+
+.btn:nth-child(2) {
+    background-color: #c3d6f7;
 }
 
 /*Adjust the size of buttons 1 & 2 specifically*/
 .btn:nth-child(1),
 .btn:nth-child(2) {
     width: 50%;
+
 }

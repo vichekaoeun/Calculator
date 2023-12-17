@@ -74,10 +74,15 @@ for (let i = 0; i < buttonLabels.length; i++) {
             Display(value);
         }
         else if (button.textContent === "=") {
-            num2 = parseFloat(value.join('')); // Changes to float
-            result = operation(num1, num2, operator);
-            value = [result];
-            Display(value);
+            if (value.length === 0) { // Does nothing when one number is entered 
+                return;
+            }
+            else {
+                num2 = parseFloat(value.join('')); // Changes to float
+                result = operation(num1, num2, operator);
+                value = [result];
+                Display(value);
+            }
         }
 
         else if (button.textContent === "X" || button.textContent === "_" || button.textContent === "+" || button.textContent === "%") {
