@@ -1,8 +1,14 @@
 // Operation functions
-function add(a, b) { return a + b; };
-function subtract(a, b) { return a - b };
-function multiply(a, b) { return a * b };
-function divide(a, b) { return a / b };
+function add(a, b) { return Math.round(a + b); };
+function subtract(a, b) { return Math.round(a - b) };
+function multiply(a, b) { return Math.round(a * b) };
+function divide(a, b) {
+    if (a === 0) {
+        value = [];
+        return "Cannot Divide 0 by a number";
+    }
+    return Math.round(a / b)
+};
 
 let num1, num2, op;
 // Selection
@@ -72,7 +78,6 @@ for (let i = 0; i < buttonLabels.length; i++) {
             result = operation(num1, num2, operator);
             value = [result];
             Display(value);
-            value = []; // Resets
         }
 
         else if (button.textContent === "X" || button.textContent === "_" || button.textContent === "+" || button.textContent === "%") {
