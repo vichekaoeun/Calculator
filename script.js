@@ -87,7 +87,6 @@ for (let i = 0; i < buttonLabels.length; i++) {
         }
         else {
             value.push(button.textContent);
-
             Display(value);
         }
         console.log(value); // Just for debugging purposes

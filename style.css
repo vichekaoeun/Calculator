@@ -24,6 +24,8 @@ body {
 .display {
     margin: 20px;
     font-size: 60px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .buttons {
