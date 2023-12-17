@@ -29,9 +29,10 @@ display.setAttribute('class', 'display');
 container.appendChild(display);
 container.appendChild(buttons);
 
+let key;
 // Create Buttons
 for (i = 0; i < 18; i++) {
-    const key = document.createElement('button');
+    key = document.createElement('button');
     key.setAttribute("class", "btn");
     key.setAttribute("id", "button" + (i + 1));
     key.textContent = 18 - i;
@@ -41,9 +42,30 @@ for (i = 0; i < 18; i++) {
 // Adding labels to buttons
 const buttonLabels = ["CLEAR", "DELETE", "7", "8", "9", "%", "4", "5", "6", "X", "1", "2", "3", "_", ".", "0", "=", "+"];
 
+let button;
+let value = [];
+for (let i = 0; i < buttonLabels.length; i++) {
+    button = document.getElementById("button" + (i + 1));
+    button.textContent = buttonLabels[i];
+
+}
+
+// Click mechanic
 for (let i = 0; i < buttonLabels.length; i++) {
     const button = document.getElementById("button" + (i + 1));
-    button.textContent = buttonLabels[i];
+
+    button.addEventListener('click', () => {
+        if (button.textContent === "CLEAR") {
+            value = [];
+        }
+        else if (button.textContent === "DELETE") {
+            value.pop();
+        }
+        else {
+            value.push(button.textContent);
+        }
+        console.log(value); // Just for debugging purposes
+    });
 }
 
 
