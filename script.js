@@ -33,10 +33,18 @@ container.appendChild(buttons);
 for (i = 0; i < 18; i++) {
     const key = document.createElement('button');
     key.setAttribute("class", "btn");
+    key.setAttribute("id", "button" + (i + 1));
     key.textContent = 18 - i;
     buttons.appendChild(key);
-
-
 }
+
+// Adding labels to buttons
+const buttonLabels = ["CLEAR", "DELETE", "7", "8", "9", "%", "4", "5", "6", "X", "1", "2", "3", "_", ".", "0", "=", "+"];
+
+for (let i = 0; i < buttonLabels.length; i++) {
+    const button = document.getElementById("button" + (i + 1));
+    button.textContent = buttonLabels[i];
+}
+
 
 // Create Display
