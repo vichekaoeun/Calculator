@@ -23,10 +23,13 @@ function operation(num1, num2, op) {
 
 const container = document.querySelector(".container");
 const buttons = document.createElement('div');
+const display_container = document.createElement('div');
 const display = document.createElement('div');
 buttons.setAttribute('class', 'buttons');
-display.setAttribute('class', 'display');
-container.appendChild(display);
+display_container.setAttribute('class', 'display_container');
+display.setAttribute("class", "display");
+container.appendChild(display_container);
+display_container.appendChild(display);
 container.appendChild(buttons);
 
 let key;
@@ -57,12 +60,15 @@ for (let i = 0; i < buttonLabels.length; i++) {
     button.addEventListener('click', () => {
         if (button.textContent === "CLEAR") {
             value = [];
+            Display(value);
         }
         else if (button.textContent === "DELETE") {
             value.pop();
+            Display(value);
         }
         else {
             value.push(button.textContent);
+            Display(value);
         }
         console.log(value); // Just for debugging purposes
     });
@@ -70,3 +76,8 @@ for (let i = 0; i < buttonLabels.length; i++) {
 
 
 // Create Display
+let text;
+function Display(value) {
+    text = display.textContent = value.join('');
+    text.setAttribute("class", "text");
+}
